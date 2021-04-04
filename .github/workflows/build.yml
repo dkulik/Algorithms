@@ -10,9 +10,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: build and run
       run: |
-        sudo apt install -y liblapack-dev
         mkdir build
         cd build
         cmake .. -DCMAKE_BUILD_TYPE=Release
         make -j
-        ctest
+        ctest -C Release
